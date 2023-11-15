@@ -9,14 +9,15 @@ range(1, 5); // [1, 2, 3, 4]
 range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
-
+let res =[];
 
 function range(start, end) {
   debugger
-  if(end <= start) return [];
+  if(end <= start) return res;
   debugger
-  
-  return [].concat( range(start + 1, end) )
+  if(res.length === end -1) return res
+  res.push(start)
+  return range(start +1, end)
 }
 
 console.log(range(1, 5)); // [1, 2, 3, 4]
