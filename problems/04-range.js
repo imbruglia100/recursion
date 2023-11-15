@@ -9,18 +9,16 @@ range(1, 5); // [1, 2, 3, 4]
 range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
-let res =[];
 
 function range(start, end) {
   debugger
-  if(end <= start) return res;
+  if(end <= start) return [];
+
+  let arr = [start].concat(range(start +1, end))
   debugger
-  if(res.length === end -1) return res
-  res.push(start)
-  return range(start +1, end)
+  return arr
 }
 
-console.log(range(1, 5)); // [1, 2, 3, 4]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
